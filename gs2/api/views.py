@@ -14,8 +14,8 @@ def student_create(request):
   if request.method == 'POST':
     json_data = request.body
     stream = io.BytesIO(json_data)
-    python_data = JSONParser().parse(stream)
-    serializer = StudentSerializer(data=python_data)
+    pythondata = JSONParser().parse(stream)
+    serializer = StudentSerializer(data=pythondata)
     if serializer.is_valid():
       serializer.save()
       res = {'msg':'data Created'}
